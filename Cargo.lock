@@ -243,6 +243,29 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b63caa9aa9397e2d9480a9b13673856c78d8ac123288526c37d7839f2a86990"
 
 [[package]]
+name = "comemo"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df6916408a724339aa77b18214233355f3eb04c42eb895e5f8909215bd8a7a91"
+dependencies = [
+ "comemo-macros",
+ "once_cell",
+ "parking_lot",
+ "siphasher",
+]
+
+[[package]]
+name = "comemo-macros"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c8936e42f9b4f5bdfaf23700609ac1f11cb03ad4c1ec128a4ee4fd0903e228db"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "crc32fast"
 version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -884,10 +907,10 @@ dependencies = [
 
 [[package]]
 name = "typst-syntax"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "abe870e191c392cad35acff28095e99896033e3f2ddcd36b01bebc485e192711"
+version = "0.14.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly-content-hint#4b9ea194dcc42f83e08e1c156b2bf4d28ae2eee6"
 dependencies = [
+ "comemo",
  "ecow",
  "serde",
  "toml",
@@ -902,9 +925,8 @@ dependencies = [
 
 [[package]]
 name = "typst-timing"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "153d288af73d7d5f476a906a1984680b0f2c6020f15cd900243a5a8223cae4f2"
+version = "0.14.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly-content-hint#4b9ea194dcc42f83e08e1c156b2bf4d28ae2eee6"
 dependencies = [
  "parking_lot",
  "serde",
@@ -913,9 +935,8 @@ dependencies = [
 
 [[package]]
 name = "typst-utils"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be823333fb1860b9f725f9e2bc848f2b85e4ef62fe94a793cd9500ad9ef554a9"
+version = "0.14.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly-content-hint#4b9ea194dcc42f83e08e1c156b2bf4d28ae2eee6"
 dependencies = [
  "once_cell",
  "portable-atomic",

@@ -36,7 +36,7 @@ termcolor = "1.4.1"
 thiserror = "2.0.11"
 two-face = { version = "0.4.3", default-features = false, features = ["syntect-fancy"] }
 typst-ansi-hl = { path = "lib" }
-typst-syntax = "0.13.0"
+typst-syntax = "0.14.0"
 
 [dependencies]
 clap = { workspace = true }
@@ -45,3 +45,6 @@ strip-ansi-escapes = "0.2.1"
 termcolor = { workspace = true }
 typst-ansi-hl = { workspace = true }
 typst-syntax = { workspace = true }
+
+[patch.crates-io]
+typst-syntax = { git = "https://github.com/ParaN3xus/typst.git", branch = "nightly-content-hint" }
