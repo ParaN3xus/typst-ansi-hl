@@ -36,7 +36,7 @@ termcolor = "1.4.1"
 thiserror = "2.0.18"
 two-face = { version = "0.4.3", default-features = false, features = ["syntect-fancy"] }
 typst-ansi-hl = { path = "lib" }
-typst-syntax = "0.14.2"
+typst-syntax = "0.15.0"
 
 [dependencies]
 clap = { workspace = true }
@@ -45,3 +45,6 @@ strip-ansi-escapes = "0.2.1"
 termcolor = { workspace = true }
 typst-ansi-hl = { workspace = true }
 typst-syntax = { workspace = true }
+
+[patch.crates-io]
+typst-syntax = { path = "../typst/crates/typst-syntax" }
