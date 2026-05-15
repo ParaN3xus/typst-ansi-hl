@@ -851,6 +851,7 @@ dependencies = [
 [[package]]
 name = "typst-syntax"
 version = "0.15.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly#d95f4b695cb803885d997134dbf56f9d01b84971"
 dependencies = [
  "ecow",
  "rustc-hash",
@@ -868,6 +869,7 @@ dependencies = [
 [[package]]
 name = "typst-timing"
 version = "0.15.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly#d95f4b695cb803885d997134dbf56f9d01b84971"
 dependencies = [
  "parking_lot",
  "serde",
@@ -877,6 +879,7 @@ dependencies = [
 [[package]]
 name = "typst-utils"
 version = "0.15.0"
+source = "git+https://github.com/ParaN3xus/typst.git?branch=nightly#d95f4b695cb803885d997134dbf56f9d01b84971"
 dependencies = [
  "libm",
  "once_cell",
