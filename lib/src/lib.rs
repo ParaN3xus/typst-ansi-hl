@@ -139,12 +139,12 @@ impl Highlighter {
 
             if let Some(raw) = ast::Raw::from_untyped(node) {
                 highlighter.highlight_raw(hl_level, out, raw)?;
-            } else if node.text().is_empty() {
+            } else if node.leaf_text().is_empty() {
                 for child in node.children() {
                     inner_highlight_node(highlighter, hl_level, &child, out, color)?;
                 }
             } else {
-                write!(out, "{}", node.text())?;
+                write!(out, "{}", node.leaf_text())?;
             }
 
             out.set_color(&prev_color)?;
@@ -172,7 +172,7 @@ impl Highlighter {
                 while let Some(child) = last_leaf.children().last() {
                     last_leaf = child;
                 }
-                if !last_leaf.text().ends_with('\n') {
+                if !last_leaf.leaf_text().ends_with('\n') {
                     writeln!(out)?;
                 }
                 writeln!(out, "```")?;
@@ -213,7 +213,7 @@ impl Highlighter {
         out: &mut DeferredWriter<W>,
         raw: ast::Raw<'_>,
     ) -> Result<(), Error> {
-        let text = raw.to_untyped().clone().into_text();
+        let text = raw.to_untyped().clone().full_text();
 
         // Collect backticks and escape if discord is enabled.
         let backticks: String = text.chars().take_while(|&c| c == '`').collect();
